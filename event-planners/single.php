@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package under
+ * @package Event Planners
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php under_post_nav(); ?>
+			<?php event_planners_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package under
+ * @package Event Planners
  */
 
 get_header(); ?>
@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'under' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'event-planners' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'under' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'event-planners' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'under' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'under' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'event-planners' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'event-planners' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'under' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'under' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'event-planners' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'event-planners' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'under' );
+							_e( 'Asides', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'under' );
+							_e( 'Galleries', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'under' );
+							_e( 'Images', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'under' );
+							_e( 'Videos', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'under' );
+							_e( 'Quotes', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'under' );
+							_e( 'Links', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'under' );
+							_e( 'Statuses', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'under' );
+							_e( 'Audios', 'event-planners' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'under' );
+							_e( 'Chats', 'event-planners' );
 
 						else :
-							_e( 'Archives', 'under' );
+							_e( 'Archives', 'event-planners' );
 
 						endif;
 					?>
@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php under_paging_nav(); ?>
+			<?php event_planners_paging_nav(); ?>
 
 		<?php else : ?>
 

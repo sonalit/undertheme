@@ -12,37 +12,37 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package under
+ * @package Event Planners
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses under_header_style()
- * @uses under_admin_header_style()
- * @uses under_admin_header_image()
+ * @uses event_planners_header_style()
+ * @uses event_planners_admin_header_style()
+ * @uses event_planners_admin_header_image()
  */
-function under_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'under_custom_header_args', array(
+function event_planners_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'event_planners_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'under_header_style',
-		'admin-head-callback'    => 'under_admin_header_style',
-		'admin-preview-callback' => 'under_admin_header_image',
+		'wp-head-callback'       => 'event_planners_header_style',
+		'admin-head-callback'    => 'event_planners_admin_header_style',
+		'admin-preview-callback' => 'event_planners_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'under_custom_header_setup' );
+add_action( 'after_setup_theme', 'event_planners_custom_header_setup' );
 
-if ( ! function_exists( 'under_header_style' ) ) :
+if ( ! function_exists( 'event_planners_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see under_custom_header_setup().
+ * @see event_planners_custom_header_setup().
  */
-function under_header_style() {
+function event_planners_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -75,15 +75,15 @@ function under_header_style() {
 	</style>
 	<?php
 }
-endif; // under_header_style
+endif; // event_planners_header_style
 
-if ( ! function_exists( 'under_admin_header_style' ) ) :
+if ( ! function_exists( 'event_planners_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see under_custom_header_setup().
+ * @see event_planners_custom_header_setup().
  */
-function under_admin_header_style() {
+function event_planners_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,15 +103,15 @@ function under_admin_header_style() {
 	</style>
 <?php
 }
-endif; // under_admin_header_style
+endif; // event_planners_admin_header_style
 
-if ( ! function_exists( 'under_admin_header_image' ) ) :
+if ( ! function_exists( 'event_planners_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see under_custom_header_setup().
+ * @see event_planners_custom_header_setup().
  */
-function under_admin_header_image() {
+function event_planners_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -123,4 +123,4 @@ function under_admin_header_image() {
 	</div>
 <?php
 }
-endif; // under_admin_header_image
+endif; // event_planners_admin_header_image

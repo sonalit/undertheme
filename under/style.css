@@ -1,5 +1,5 @@
 /*
-Theme Name: under
+Theme Name: Event Planners
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -7,14 +7,14 @@ Description: Description
 Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: under
+Text Domain: event-planners
 Domain Path: /languages/
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- under is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+ Event Planners is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -67,6 +67,26 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
+#header {
+ width: 750px;
+ height: 100px;
+ }
+
+
+body,
+button,
+input,
+select,
+textarea {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-family: 'PT Serif', serif;
+    line-height: 1.5;
+    color: #404040;
+    color: hsl(0, 0%, 25%);
+}
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
@@ -133,14 +153,24 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-family: Garamond;
+	font-size: 15px;
 	line-height: 1.5;
 }
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
+h2, h3, h4, h5, h6 {
+	clear: right;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: Helvetica;
+	
 }
+
+h1 {
+font-weight: bold;
+font-size: 25px;
+font-family: Helvetica;
+}
+
 p {
 	margin-bottom: 1.5em;
 }
@@ -258,20 +288,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb; 
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 12px;
-	font-size: 1.2rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: 1em 2em;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-family: 'Lato';
+    text-transform: uppercase;
+    line-height: 1;
+    color: hsl(0, 0%, 100%);
+    background: #3c3c3c;
+    background: hsl(0, 0%, 24%);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+    -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS *//
 }
+
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -347,71 +379,108 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
-}
-a:visited {
-	color: purple;
-}
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
+    text-decoration: none;	
+    color: #000; 
+    text-decoration: underline;   
 }
 
+a:visited {
+    color: #333;
+}
+
+a:hover,
+a:focus,
+a:active { 
+    text-decoration: none; 
+}
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    clear: both;
+    font-family: Helvetica Neue, Helvetica;
+    text-transform: uppercase;
+    background: #313131;
+    background: hsl(0, 0%, 19%);
 }
 .main-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 }
 .main-navigation li {
-	float: left;
-	position: relative;
+    float: left;
+    position: relative;
 }
 .main-navigation a {
-	display: block;
-	text-decoration: none;
+    display: block;
+    padding: 1.3em 1em;
+    font-size: 14px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    line-height: 1.3em;
+    color: white;
+    color: hsl(0, 0%, 100%);
 }
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
+    position: absolute;
+    left: 0;
+    z-index: 99999;
+    display: none;
+    float: left;
+    padding: 0;
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
 }
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+    left: 100%;
+    top: 0;
 }
 .main-navigation ul ul a {
-	width: 200px;
+    width: 200px;
 }
 .main-navigation ul ul li {
 }
 .main-navigation li:hover > a {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
 }
 .main-navigation ul ul :hover > a {
 }
 .main-navigation ul ul a:hover {
+    background: #313131;
+    background: hsl(0, 0%, 19%);
 }
 .main-navigation ul li:hover > ul {
-	left: auto;
+    display: block;
 }
-.main-navigation ul ul li:hover > ul {
-	left: 100%;
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+    background: white;
+    color: #313131;
+    color: hsl(0, 0%, 19%);
 }
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
+
+.main-navigation .current_page_ancestor {
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
 }
+
+.main-navigation ul ul .current_page_parent,
+.main-navigation .current_page_parent .current_page_item > a {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+} 
 /* Small menu */
 .menu-toggle {
 	display: none;
@@ -498,6 +567,66 @@ a:active {
 	margin: 0 auto;
 }
 
+
+
+/*--------------------------------------------------------------
+7.1 Headers
+--------------------------------------------------------------*/
+.site-branding {
+    padding: 6rem 0;
+    text-align: center;
+    background: #2c86ba;
+    background: hsl(202, 62%, 45%);
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 40px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    line-height: normal;
+    padding-bottom: 1rem;
+    font-family: futura, Helvetica;
+}
+
+.site-description {
+    font-weight: 100;
+    font-size: 20px;
+    font-size: 2rem;
+}
+                    
+.title-box {
+    width: 600px;
+    max-width: 75%;
+    padding: 4rem;
+    margin: 0 auto;
+    border: solid 1px #fff;
+    border: solid 1px hsla(0, 0%, 100%, .3);
+}
+                    
+.site-branding a { 
+    text-decoration: none; 
+}
+
+.site-title a,
+.site-description { 
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+}
+                    
+/* Header responsive */
+@media screen and (max-width: 600px) {
+    .site-branding { padding: 0; }
+    
+    .title-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 4rem;
+        border: none;
+    }
+}
+
+
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
@@ -529,9 +658,38 @@ a:active {
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
+
 .widget {
-	margin: 0 0 1.5em;
+    margin: 0 0 3em;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 14px;
 }
+
+.widget-title {
+    margin-bottom: 1em;    
+    font-size: 19px;
+    border-bottom: 2px solid #4791FF;    
+}
+
+.widget a {
+    font-weight: 700;
+    color: #000;
+    color: hsl(0, 0%, 0%);
+}
+
+.widget ul,
+.widget ol {
+    padding: 0;
+    margin: -1em 0 0;
+    list-style-type: none;
+}
+
+.widget li { padding: 1em 0 0; }
+
+.widget li ul,
+.widget li ol { margin-top: 0; }
+
+.widget li li { margin-left: 1.5em; }
 
 /* Make sure select elements fit in widgets */
 .widget select {
@@ -543,12 +701,196 @@ a:active {
 	display: none;
 }
 
+.footer-widgets { margin: 0 auto; }
+
+.footer-widgets .widget-title,
+.footer-widgets .widget a:hover {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    border-color: #fff;
+    border-color: hsl(0, 0%, 100%);
+}
+
+.footer-widgets .widget {
+    float: left;
+    width: 320px;
+    margin: 0 4rem 8rem 4rem;
+}
+
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+.entry-title {
+    margin: 0 0 2rem;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1.3em;
+    color: #000;
+    color: hsl(0, 0%, 0%);
+}
+
+.entry-content a { 
+    text-decoration: underline; 
+}
+                    
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 { margin-bottom: .4em; }
+
+.entry-content h1 {
+    font-size: 30px;
+    font-size: 3.0rem;
+}
+
+.entry-content h2 {
+    font-size: 28px;
+    font-size: 2.8rem;
+}
+
+.entry-content h3 {
+    font-size: 26px;
+    font-size: 2.6rem;
+}
+
+.entry-content h4 {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+.entry-content h5 {
+    font-size: 22px;
+    font-size: 2.2rem;
+}
+
+.entry-content h6 {
+    font-size: 20px;
+    font-size: 2.0rem;
+}
+
+.entry-content p,
+.entry-content ul,
+.entry-content ol {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.6em;
+}
+
+.entry-content blockquote p {
+    font-size: 28px;
+    font-size: 2.8rem;
+    line-height: 1.5em;
+}
+
+/* Smaller fonts for smaller screens */
+@media screen and (max-width: 680px) {
+    .entry-title {
+        font-size: 32px;
+        font-size: 3.2rem;
+        line-height: 1.3em;
+    }
+    .entry-content h1 {
+        font-size: 28px;
+        font-size: 2.8rem;
+    }
+
+    .entry-content h2 {
+        font-size: 26px;
+        font-size: 2.6rem;
+    }
+
+    .entry-content h3 {
+        font-size: 24px;
+        font-size: 2.4rem;
+    }
+
+    .entry-content h4 {
+        font-size: 22px;
+        font-size: 2.2rem;
+    }
+
+    .entry-content h5 {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+
+    .entry-content h6 {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+
+    .entry-content p,
+    .entry-content ul,
+    .entry-content ol  {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+    
+    .entry-content blockquote p {
+        font-size: 22px;
+        font-size: 2.2rem;
+        line-height: 1.5em;
+    }
+}
+
+/* Meta */
+.category-list {
+    margin: 1.3em 0 1em;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+.category-list a {
+    color: #333;
+    color: hsl(0, 0%, 10%);
+}
+
+.category-list a:hover {
+    color: #000;
+    color: hsl(0, 0%, 0%);
+}
+
+.entry-meta {
+    margin-bottom: 2rem;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.entry-meta a { font-weight: 600; }
+
+.entry-footer {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 2em;
+}
+
+.entry-footer ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.entry-footer li {
+    display: inline-block;
+    margin-right: 4rem;
+}
+
+.entry-footer a {
+    margin-left: .5rem;
+}
+                
 .sticky {
 }
 .hentry {
@@ -675,3 +1017,31 @@ object {
 	max-width: 11.11%;
 }
 .gallery-caption {}
+
+/*--------------------------------------------------------------
+13.0 Footer
+--------------------------------------------------------------*/
+.site-footer {
+    padding: 2em;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 15px;
+    font-size: 1.6rem;
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+}
+
+.site-footer a {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+}
+
+.site-info { 
+    text-align: center;
+    font-size: 12px; 
+    color:#4791FF;
+}
+    
+
+

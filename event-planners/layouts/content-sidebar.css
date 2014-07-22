@@ -4,8 +4,10 @@ Layout: Content-Sidebar
 */
 
 .site-content {
-    padding-bottom: 4em;
-    background: #fff;
+    padding-bottom: 2em;
+    
+    background-color: white;
+  
 }
 .single .site-content,
 .page .site-content { 
@@ -16,8 +18,7 @@ Layout: Content-Sidebar
     width: 380px;
     float: right;
     padding: 4rem;
-    background: #fff;
-    background: hsl(0, 0%, 100%);
+    background: #F5A685;
 }
 .site-footer {
     clear: both;
@@ -25,11 +26,11 @@ Layout: Content-Sidebar
 }
 
 .entry-header,
+.post-navigation,
 .entry-content,
-.entry-meta,
 .entry-footer,
 .tag-links,
-.post-navigation,
+
 .comments-area,
 .paging-navigation {
     position: relative;
@@ -46,6 +47,16 @@ Layout: Content-Sidebar
         margin-left: -380px;
         padding-left: 380px;
     }
+    
+    .entry-header,
+    .entry-content,
+    .entry-footer,
+    .tag-links,
+    .post-navigation,
+    .comments-area,
+    .paging-navigation {
+    	margin-right: 0;
+    	}
     
     @media screen and (max-width: 1159px) {  
     .site-content .widget-area {

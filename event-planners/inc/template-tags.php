@@ -49,14 +49,19 @@ function event_planners_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'event-planners' ); ?></h1>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'event-planners' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'event-planners' ) );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
+	<!--divider class post-nav-box clears by pushing any content further down-->
+    <div class="post-nav-box clear">
+        <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'event-planners' ); ?></h1>
+        <div class="nav-links">
+            <?php
+    /* Class nav-previous contains the divider class nav-indicator which shows "Previous Post:", then the link to the previous post including its title is displayed in h1 styling */
+            previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'event-planners' ) . '</div><h1>%link</h1></div>', '%title' );
+     /* Class nav-next contains the divider class nav-indicator which shows "Next Post:", then the link to the next post including its title is displayed in h1 styling */
+            next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'event-planners' ) . '</div><h1>%link</h1></div>', '%title' );
+            ?>
+        </div><!-- .nav-links -->
+   		 </div><!-- .post-nav-box -->
+		</nav><!-- .navigation -->
 	<?php
 }
 endif;
@@ -133,3 +138,24 @@ function event_planners_category_transient_flusher() {
 }
 add_action( 'edit_category', 'event_planners_category_transient_flusher' );
 add_action( 'save_post',     'event_planners_category_transient_flusher' );
+
+/*
+ * Code for social media menu, CREDITS GO TO: http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
+ */
+
+function event_planners_social_menu() {
+    if ( has_nav_menu( 'social' ) ) {
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'social',
+			'container'       => 'div',
+			'container_id'    => 'menu-social',
+			'container_class' => 'menu-social',
+			'menu_id'         => 'menu-social-items',
+			'menu_class'      => 'menu-items',
+			'depth'           => 1,
+			'fallback_cb'     => '',
+		)
+	);
+    }
+}

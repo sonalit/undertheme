@@ -11,7 +11,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-
+    <!-- the function below calls the file sidebar-footer.php and if there are widgets in the footer sidebar that was added, the code in that file will display-->
 	<?php get_sidebar('footer');?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'event-planners' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'event-planners' ), 'WordPress' ); ?></a>

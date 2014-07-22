@@ -147,6 +147,21 @@ a img {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+.entry-title {
+    margin: 0 0 2rem;
+    font-weight: 900;
+    font-size: 40px;
+    font-size: 4rem;
+    line-height: 1.3em;
+    color: #000;
+    color: hsl(0, 0%, 0%);
+}
+
+.entry-content a { 
+    text-decoration: none; 
+}
+
+
 body,
 button,
 input,
@@ -165,6 +180,57 @@ h2, h3, h4, h5, h6 {
 	
 }
 
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 { margin-bottom: .4em; }
+
+.entry-content h1 {
+    font-size: 32px;
+    font-size: 3.2rem;
+}
+
+.entry-content h2 {
+    font-size: 30px;
+    font-size: 3.0rem;
+}
+
+.entry-content h3 {
+    font-size: 28px;
+    font-size: 2.8rem;
+}
+
+.entry-content h4 {
+    font-size: 26px;
+    font-size: 2.6rem;
+}
+
+.entry-content h5 {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+.entry-content h6 {
+    font-size: 22px;
+    font-size: 2.2rem;
+}
+
+.entry-content p,
+.entry-content ul,
+.entry-content ol {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.6em;
+}
+
+.entry-content blockquote p {
+    font-size: 28px;
+    font-size: 2.8rem;
+    line-height: 1.5em;
+}
+
 h1 {
 font-weight: bold;
 font-size: 25px;
@@ -181,8 +247,8 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
-}
+	/*margin: 0 1.5em;
+*/}
 address {
 	margin: 0 0 1.5em;
 }
@@ -229,6 +295,110 @@ big {
 	font-size: 125%;
 }
 
+/* Smaller fonts for smaller screens */
+@media screen and (max-width: 680px) {
+    .entry-title {
+        font-size: 32px;
+        font-size: 3.2rem;
+        line-height: 1.3em;
+    }
+    .entry-content h1 {
+        font-size: 28px;
+        font-size: 2.8rem;
+    }
+
+    .entry-content h2 {
+        font-size: 26px;
+        font-size: 2.6rem;
+    }
+
+    .entry-content h3 {
+        font-size: 24px;
+        font-size: 2.4rem;
+    }
+
+    .entry-content h4 {
+        font-size: 22px;
+        font-size: 2.2rem;
+    }
+
+    .entry-content h5 {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+
+    .entry-content h6 {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+
+    .entry-content p,
+    .entry-content ul,
+    .entry-content ol  {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+    
+    .entry-content blockquote p {
+        font-size: 22px;
+        font-size: 2.2rem;
+        line-height: 1.5em;
+    }
+}
+
+/* Meta */
+.category-list {
+    margin: 1.3em 0 1em;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+.category-list a {
+    color: #333;
+    color: hsl(0, 0%, 10%);
+}
+
+.category-list a:hover {
+    color: #000;
+    color: hsl(0, 0%, 0%);
+}
+
+.entry-meta {
+    margin-bottom: 2rem;
+    padding: 0;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.entry-meta a { font-weight: 600; }
+
+.entry-footer {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 2em;
+}
+
+.entry-footer ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.entry-footer li {
+    display: inline-block;
+    margin-right: 4rem;
+}
+
+.entry-footer a {
+    margin-left: .5rem;
+}
+                
+      
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
@@ -289,18 +459,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	padding: 1em 2em;
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-family: 'Lato';
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: Helvetica;
     text-transform: uppercase;
     line-height: 1;
-    color: hsl(0, 0%, 100%);
-    background: #3c3c3c;
-    background: hsl(0, 0%, 24%);
+    color: black;
+    background-color: #7fb5b5;
     border: none;
-    border-radius: 3px;
-    cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-    -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS *//
 }
 
 
@@ -308,8 +475,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	
 }
 button:focus,
 input[type="button"]:focus,
@@ -381,7 +547,7 @@ textarea {
 a {
     text-decoration: none;	
     color: #000; 
-    text-decoration: underline;   
+    text-decoration: underline;     
 }
 
 a:visited {
@@ -390,12 +556,35 @@ a:visited {
 
 a:hover,
 a:focus,
-a:active { 
+ { 
     text-decoration: none; 
 }
+
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
+.menu-social ul {
+    float: right;
+    text-align: center;
+    list-style: none;    
+}
+
+.menu-social ul li {
+    position: relative;
+    display:  inline-block;    
+}
+
+.menu-social li a:before {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
+    font-family: 'Fontawesome';
+    font-size: 20px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    content: '\f0c0';
+}
+
 .main-navigation {
     position: relative;
     float: left;
@@ -481,6 +670,12 @@ a:active {
     background: #313131;
     background: hsl(0, 0%, 19%);
 } 
+.post-navigation a {
+    font-size: 20px; 
+    text-decoration:none;
+    font-family: Helvetica;
+    color:#47B2B2; 
+}
 /* Small menu */
 .menu-toggle {
 	display: none;
@@ -495,24 +690,44 @@ a:active {
 		display: none;
 	}
 }
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+    font-size: 15px;
+    font-family: Helvetica;
+    color: #000;
+    color: hsl(0, 0%, 0%);
 }
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+    width: 50%;
+    float: left;
+    padding-right: 15%;
 }
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+    width: 50%; 
+    float: right;
+    padding-left: 15%;
+    text-align: right;
+}
+
+.nav-indicator { 
+    margin-bottom: 1em; 
+}
+
+.nav-previous h1,
+.nav-next h1 { 
+    font-weight: 700; 
+}
+.post-nav-box {
+    padding: 1em 0;
+    margin-bottom: 3em;
+    border-top: #696969 dotted 1px;
+    border-bottom: #696969 dotted 1px; 
 }
 
 /*--------------------------------------------------------------
@@ -567,6 +782,18 @@ a:active {
 	margin: 0 auto;
 }
 
+@media screen and (min-width: 1320px) {
+    .alignleft {
+        margin-left: -160px; 
+    }
+}
+
+@media screen and (min-width: 1820px) {
+    .alignright { 
+        margin-right: -160px; 
+    }
+}
+    
 
 
 /*--------------------------------------------------------------
@@ -575,8 +802,9 @@ a:active {
 .site-branding {
     padding: 6rem 0;
     text-align: center;
-    background: #2c86ba;
-    background: hsl(202, 62%, 45%);
+    background: #7fb5b5;
+     background-image: url(http://www.clker.com/cliparts/J/i/J/h/l/E/black-balloons-md.png  );
+    background-repeat: no-repeat;
 }
 
 .site-title {
@@ -586,7 +814,7 @@ a:active {
     text-transform: uppercase;
     line-height: normal;
     padding-bottom: 1rem;
-    font-family: futura, Helvetica;
+    font-family: Helvetica;
 }
 
 .site-description {
@@ -660,22 +888,29 @@ a:active {
 --------------------------------------------------------------*/
 
 .widget {
-    margin: 0 0 3em;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 14px;
+    margin: 0 0 4em;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.6rem;
+    padding-left: 20px;
+
 }
 
 .widget-title {
     margin-bottom: 1em;    
     font-size: 19px;
-    border-bottom: 2px solid #4791FF;    
+    border-bottom: 1px solid   
 }
 
 .widget a {
-    font-weight: 700;
-    color: #000;
-    color: hsl(0, 0%, 0%);
+    font-family: helvetica neue; 
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
 }
+
+.widget a:hover {
+	text-decoration: underline;
+	}
 
 .widget ul,
 .widget ol {
@@ -709,6 +944,7 @@ a:active {
     color: hsl(0, 0%, 100%);
     border-color: #fff;
     border-color: hsl(0, 0%, 100%);
+
 }
 
 .footer-widgets .widget {
@@ -726,17 +962,22 @@ a:active {
 --------------------------------------------------------------*/
 .entry-title {
     margin: 0 0 2rem;
-    font-weight: 800;
-    font-size: 30px;
+    font-weight: 700;
+    font-size: 27px;
     line-height: 1.3em;
     color: #000;
     color: hsl(0, 0%, 0%);
+    padding-top: 20px;
 }
 
 .entry-content a { 
     text-decoration: underline; 
 }
-                    
+   
+.entry-content a:hover { 
+    text-decoration: none; 
+}
+                 
 .entry-content h1,
 .entry-content h2,
 .entry-content h3,
@@ -842,7 +1083,7 @@ a:active {
 /* Meta */
 .category-list {
     margin: 1.3em 0 1em;
-    font-family: 'Lato', sans-serif;
+    font-family: Helvetica;
     font-size: 16px;
     font-size: 1.6rem;
 }
@@ -860,7 +1101,7 @@ a:active {
 .entry-meta {
     margin-bottom: 2rem;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: Helvetica;
     font-size: 14px;
     font-size: 1.4rem;
 }
@@ -870,7 +1111,7 @@ a:active {
 .entry-footer {
     margin-top: 3rem;
     margin-bottom: 5rem;
-    font-family: 'Lato', sans-serif;
+    font-family:  Helvetica;
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 2em;
@@ -914,6 +1155,59 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+blockquote {
+    padding: 1em 1em 0;
+    margin-bottom: 1em;
+    font-size: 26px;
+    font-style: italic;
+    border-top: solid 1px #7fb5b5;
+    border-bottom: solid 1px #7fb5b5;
+}
+
+blockquote em { 
+    font-style: normal; 
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 1em;
+    margin-left: 40%;
+    font-size: 14px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 1.0em;
+    text-align: right;
+}
+
+blockquote.alignleft {
+    width: 45%;
+    float: left;
+    padding: 1em 0 0;
+    margin-right: 2em;
+}
+
+blockquote.alignright {
+    width: 45%;
+    float: right;
+    padding: 1em 0 0;
+    margin-left: 2em;
+}
+
+/* Blockquotes responsive */
+@media screen and (max-width: 780px) {
+    blockquote.alignleft,
+    blockquote.alignright { width: 40%; }
+}
+
+@media screen and (max-width:600px) {
+    blockquote.alignleft,
+    blockquote.alignright {
+        width: 100%;
+        padding: 1em 1.5em 0;   
+    }
+}
+        
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -925,12 +1219,112 @@ a:active {
 /*--------------------------------------------------------------
 10.3 Comments
 --------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
+.comments-title {
+    font-weight: 700;
+    font-size: 17px;
+    font-size: 1.7rem;
 }
 
+.comments-area > ol {
+    padding: 5px;
+    margin: 2em 0;
+    list-style-type: none;
+}
+
+ol.children { list-style-type: none; }
+
+.comment-list ol { margin-left: 50px; }
+
+.comment-meta { margin-bottom: 1em; }
+
+.comment-author .avatar {
+    width: 50px;
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+.comment-author .fn {
+    font-weight: 600;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.comment-metadata {
+    font-size: 14px;
+    font-size:1.4rem;
+}
+
+.comment-content,
+.reply { margin-left: 70px; }
+
+.comment-body {
+    font-size: 18px;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: solid #FF8457 1px;
+}
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.comment-content ol { margin-left: 1.5em; }
+
+.reply {
+    font-weight: 500;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+.bypostauthor{
+
+}
+
+/* Comments responsive */
+@media screen and (max-width:600px) {    
+    .comment-list ol { margin-left: 0; }
+    
+    .comment-content ol { margin-left: 1.5em; }
+    
+    .comment-content,
+    .reply { margin-left: 0; }
+}
+                
+.comment-reply-title {
+    margin-bottom: .5em;
+    font-weight: 600;
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+.comment-form {
+    padding-bottom: 4rem;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+.comment-form textarea {
+    font-family: Garamond;
+    font-size: 1.5px;
+    font-size: 1.5rem;
+    width:390px;
+    height: 100px;
+}
+.comment-form label { 
+    display: block;
+}
+
+.required { 
+    color: red;
+}
+
+.form-allowed-tags{
+display:none;
+}
+          
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
@@ -1023,7 +1417,7 @@ object {
 --------------------------------------------------------------*/
 .site-footer {
     padding: 2em;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-family: Helvetica;
     font-size: 15px;
     font-size: 1.6rem;
     color: #fff;
@@ -1040,7 +1434,7 @@ object {
 .site-info { 
     text-align: center;
     font-size: 12px; 
-    color:#4791FF;
+    color:#7fb5b5;
 }
     
 

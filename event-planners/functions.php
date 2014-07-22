@@ -42,7 +42,8 @@ function event_planners_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'event-planners' ),
+		'primary' => __( 'Primary Menu', 'event-planners' ), //registers the primary menu
+		'social' => __('Social Menu', 'event-planners' ), //adds a secondary menu, that we can use for displaying social media
 	) );
 	
 	/*
@@ -85,7 +86,8 @@ function event_planners_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-	
+/*A new sidebar is registered using the code above with minor changes, name changed to "Footer Widgets", id changed to sidebar-2 */
+/*This is to create a footer widget to appear in the footer area. Widgetized area is added to footer with the help of sidebar-footer.php*/
 	register_sidebar( array(
 		'name'          => __( 'Footer Widgets', 'under' ),
 		'id'            => 'sidebar-2',
@@ -103,8 +105,11 @@ add_action( 'widgets_init', 'event_planners_widgets_init' );
  */
 function event_planners_scripts() {
 	wp_enqueue_style( 'event-planners-style', get_stylesheet_uri() );
+	
+	// imports the font awesome fonts, which we will use for the social media icons on our custom menu
+	wp_enqueue_style('event-planners_fontawesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 
-	wp_enqueue_style( 'event-planners-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
+	wp_enqueue_style( 'event-planners-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css'); //call the content-sidebar.css file in order to display the content + sidebar layout correctly 
 	
 	wp_enqueue_script( 'event-planners-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

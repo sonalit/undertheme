@@ -31,6 +31,9 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Primary Menu', 'event-planners' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php event_planners_social_menu(); // adds our custom social media menu ?> 
+		
+		
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

@@ -176,6 +176,7 @@ h2, h3, h4, h5, h6 {
 	clear: right;
 	font-weight: bold;
 	font-size: 18px;
+    font-size: 1.8rem;
 	font-family: Helvetica;
 	
 }
@@ -274,7 +275,6 @@ big {
         font-size: 28px;
         font-size: 2.8rem;
     }
-
 
     .entry-content p,
     .entry-content ul,
@@ -704,8 +704,6 @@ a:focus,
     }
 }
     
-
-
 /*--------------------------------------------------------------
 7.1 Headers
 --------------------------------------------------------------*/
